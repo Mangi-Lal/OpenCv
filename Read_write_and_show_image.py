@@ -1,22 +1,23 @@
 
 import cv2 as cv # adding opencv library to the code
 # reading any image using path of the image and "r" is used to convert normal string to raw string
-img = cv.imread(r"C:\Users\SHRAWAN PRO\Desktop\College book\benz.jpg") 
-
+img = cv.imread(r"C:\Users\SHRAWAN PRO\Desktop\College ++\OpenCv\Mangi_Lal.jpg") 
+img = cv.resize(img, (0, 0), fx = 0.3, fy = 0.3)
 cv.imshow("benz",img) # showing image 
 cv.waitKey(1000) # waitKey wait for any key to press, if nothing in '()', and then 
 cv.destroyAllWindows() # destroyAllWindows close the the windows
 
 print(img.shape) #print the shape of image e.g. [width, height, colors] bcz image is a 3-dimensional array/tensor (https://codecraft.tv/courses/tensorflowjs/tensors/what-are-tensors/)
 
-cv.imwrite("benz_1.jpg",img) # writing image or Save each frame using cv2.imwrite()
-img = cv.imread("./benz_1.jpg") # reading any image in same directory
+cv.imwrite("Mangi_Lal_1.jpg",img) # writing image or Save each frame using cv2.imwrite()
+img = cv.imread("./Mangi_Lal_1.jpg") # reading any image in same directory
 cv.imshow("benz_1",img) 
 cv.waitKey(1000)
 cv.destroyAllWindows()
 
 grey_benz = cv.cvtColor(img,cv.COLOR_BGR2GRAY) # converting color of any image BGR to black & white or (gray)
-img = cv.imshow("benz",grey_benz)
+img = cv.resize(grey_benz, (0, 0), fx = 0.3, fy = 0.3)
+img = cv.imshow("Mangi_Lal",grey_benz)
 cv.waitKey()
 cv.destroyAllWindows()
 print(grey_benz.shape)
